@@ -1,23 +1,25 @@
 {
-  "name": "deanbd",
+  "name": "deandb",
   "version": "1.0.0",
-  "description": "- [x] Перегнать данные в Exel / CSV - [ ] Схема БД - [ ] Определиться со стеком. - [ ] ...",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NadezhdaGlin/DeanBD.git"
   },
-  "author": "",
+  "author": "Nadezhda Glinova",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/NadezhdaGlin/DeanBD/issues"
   },
   "homepage": "https://github.com/NadezhdaGlin/DeanBD#readme",
   "dependencies": {
+    "concurrently": "^6.0.2",
     "express": "^4.17.1",
-    "mysql2": "^2.2.5"
+    "nodemon": "^2.0.7"
   }
 }
