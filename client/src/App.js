@@ -1,8 +1,15 @@
+import { useRoutes } from "./routes";
+import { BrowserRouter } from 'react-router-dom';
+
 function App() {
+  const routes = useRoutes();
+
   return (
-    <div>
-      Гав
-    </div>
+    <BrowserRouter>
+      <div>
+        {routes}
+      </div>
+    </BrowserRouter>
   );
 }
 
