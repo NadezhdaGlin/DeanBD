@@ -22,17 +22,17 @@ const connection = mysql.createConnection({
 var app = express();
 app.use("/api", apiRouter);
 
-app.get('/', (req, res) => //req - запрос, res - ответ
-        
-{   res.setHeader('Access-Control-Allow-Origin', '*');
+app.get('/', (req, res) => //req - запрос, res - ответ    
+{
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
     connection.query("SELECT * FROM students LIMIT 5", (err, results, fields) => {
         console.log(err);
-        res.send(results); // собственно данные
-        console.log(fields); // мета-данные полей 
-});
- 
-    console.log("Кто-то стучит в api");
+//         results.forEach(row => {
+//             console.log(row["name"]);
+//         });
+        res.send(results)
+    });
 });
 
 app.listen(3012, () =>

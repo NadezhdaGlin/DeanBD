@@ -26,7 +26,7 @@ export const useRoutes = () => {
                 </div>
             </Route>
 
-            <Redirect to = "/notfound" />
+            <Redirect to = "/test" />
         </Switch>
     )
 }
