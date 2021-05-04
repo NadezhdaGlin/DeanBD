@@ -7,5 +7,16 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
+//    document.getElementById('root'),
+//    document.getElementById('article'),
+    document.getElementById('header')
+);
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+//    document.getElementById('root'),
+//    document.getElementById('article'),
+    document.getElementById('header')
 );
