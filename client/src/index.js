@@ -4,19 +4,8 @@ import './index.css';
 import App from './App';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-//    document.getElementById('root'),
-//    document.getElementById('article'),
-    document.getElementById('header')
-);
-
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-//    document.getElementById('root'),
-//    document.getElementById('article'),
-    document.getElementById('header')
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>,
+    document.getElementById('table')
 );

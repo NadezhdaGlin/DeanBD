@@ -2,15 +2,13 @@ import { useRoutes } from "./routes";
 import { BrowserRouter } from 'react-router-dom';
 
 function App() {
-  const routes = useRoutes();
+    const routes = useRoutes();
 
-  return (
-    <BrowserRouter>
-      <div>
-        {routes}
-      </div>
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            {routes}
+        </BrowserRouter>
+    );
 }
 
 export default App;
