@@ -1,21 +1,37 @@
 const {Router} = require('express');
 const router = Router();
+const connection = require('./connection')
 
-router.get("/someData", (req, res) => {
-    console.log("Кто-то стучит в api");
+router.get('/students', (req, res) => //req - запрос, res - ответ    
+{
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
-
-    res.send([
-        {
-            surname: "Иванов",
-            name: "Петр",
-            patronymic: "Иванович",
-            stud_recbook: "15 = ПМ = ФЫ",
-            ID_groups: "4",
-            teams_number: "",
+    connection.query("SELECT students.name, students.surname, students.patronymic,students.stud_recbook, groups.number FROM students JOIN groups ON groups.id = students.ID_groups", (err, results, fields) => {
+        if (err) {
+            console.log(err);
+            res.status(503).send("Error");
         }
-    ]);
+        else {
+        res.send(results)
+        }
+    });
 });
+
+router.get('/groups', (req, res) => //req - запрос, res - ответ    
+{
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
+    connection.query("SELECT id, number FROM groups", (err, results, fields) => {
+        if (err) {
+            console.log(err);
+            res.status(503).send("Error");
+        }
+        else {
+        res.send(results)
+        }
+    });
+});
+
+
 
 module.exports = router;

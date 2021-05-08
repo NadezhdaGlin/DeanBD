@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDataGrid from 'react-data-grid';
 
-export class TestButton extends React.Component {
+export class StudentsTable extends React.Component {
     constructor(props) {
         super(props);
 
@@ -13,9 +13,9 @@ export class TestButton extends React.Component {
     }
 
     componentDidMount() {
-        fetch("http://127.0.0.1:3012", {
+        fetch("http://127.0.0.1:3012/students", {
             method: "GET",
-            origin: "http://127.0.0.1:3012"
+            origin: "http://127.0.0.1:3012/students"
         })
         .then(res => res.json())
         .then(res => {

@@ -1,11 +1,11 @@
 import { Switch, Route, Redirect } from 'react-router-dom'
-import { TestButton } from "./pages/testButton";
+import { StudentsTable } from "./pages/StudentsTable";
 
 export const useRoutes = () => {
     return (
         <Switch>
-            <Route path = "/test">
-                <TestButton />
+            <Route path = "/students">
+                <StudentsTable />
             </Route>
 
             <Route path = "/a">
@@ -22,11 +22,11 @@ export const useRoutes = () => {
 
             <Route path = "/notfound">
                 <div>
-                    Ты куда полез, пидр
+                    <center><b>404</b></center>
                 </div>
             </Route>
 
-            <Redirect to = "/test" />
+            <Redirect to = "/notFound" />
         </Switch>
     )
 }

@@ -20,20 +20,7 @@ const connection = mysql.createConnection({
 
 
 var app = express();
-app.use("/api", apiRouter);
-
-app.get('/', (req, res) => //req - запрос, res - ответ    
-{
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
-    connection.query("SELECT students.name, students.surname, students.patronymic,students.stud_recbook, groups.number FROM students JOIN groups ON groups.id = students.ID_groups", (err, results, fields) => {
-        console.log(err);
-//         results.forEach(row => {
-//             console.log(row["name"]);
-//         });
-        res.send(results)
-    });
-});
+app.use("/", apiRouter);
 
 app.listen(3012, () =>
 {

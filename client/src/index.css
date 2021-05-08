@@ -5,6 +5,7 @@
     /* Переменные глобальные */
 
     --header-size: 10%;
+    --leftbar-size: 105px;
 }
 
 html, body {
@@ -37,7 +38,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    width: 10%;
+    width: var(--leftbar-size);
     min-width: 100px;
 }
 
@@ -49,6 +50,8 @@ body {
 #groupsBar {
     background-color: rgb(255, 0, 212);
     height: calc(100% - var(--header-size));
+    overflow-y: scroll;
+    
 }
 
 #content {
@@ -56,7 +59,7 @@ body {
     flex-direction: column;
     flex: 1 0 auto;
     display: flex;
-    width: 90%;
+    width: calc(100% - var(--leftbar-size));
 }
 
 #navigation {
@@ -71,4 +74,16 @@ body {
     flex: 1 0 auto;
     /* display: flex; */
     height: calc(100% - var(--header-size));
+}
+
+
+a.groupSelect{
+    display: inline-block;
+    background: #cfd2d4;
+    color: rgb(0, 0, 0);
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    margin: 1px;
+    width: 75%;
 }
