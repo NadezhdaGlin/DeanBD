@@ -56,8 +56,18 @@ export class LeftBar extends React.Component {
                             <button className="accordion2">
                                 Экзамен
                             </button>
+                            <button className="accordion2">
+                                Зачет
+                            </button>
+                            <button className="accordion2">
+                                Студенты
+                            </button>
+                            <button className="accordion2">
+                                Предметы
+                            </button>
                         </div>
                     </div>
+
                 ))
             )
         } 
