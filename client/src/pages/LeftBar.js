@@ -18,7 +18,7 @@ export class LeftBar extends React.Component {
         })
         
         .then(res => res.json())
-        .then(res => {
+        .then(res => { console.log(res);
             this.setState({
                 error: null,
                 isFetching: false,
@@ -26,8 +26,18 @@ export class LeftBar extends React.Component {
             });    
         })
     }
-    
     render() {
+        function baton (e) { console.log(e)
+            e.target.classList.toggle("active");
+
+            var panel = e.target.nextElementSibling;
+            if (panel.style.display === "block") { //вываливает блок
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+            console.log("FFFFFFFFF");
+        }
         const { error, isFetching, data } = this.state;
         
          if (isFetching) {
@@ -37,22 +47,34 @@ export class LeftBar extends React.Component {
         else if (error) {
             return <div>Ошибка</div>
         }
-        
-        else {
-            return data.map(group =>(
-                    <a className="groupSelect">{group["number"]}</a>
-            ))
-        }
+        else { 
+            return (
+                data.map(group => (
+                    <div>
+                        <button className="accordion" onClick={baton}> {group.id} </button>
+                        <div className="panel">
+                            <button className="accordion2">
+                                Экзамен
+                            </button>
+                        </div>
+                    </div>
+                ))
+            )
+        } 
     }
-    
     
 }
 
-
-
-//
-//export const LeftBar = () => {
-//    return (
-//    <div>Меню</div>
-//    )
-//}
+//return (
+//                data.map(group => (
+//                    <div class="dropdown">
+//                        <button class="dropbtn">{group}</button>
+//                        <div class="dropdown-content">
+//                            <a href="#">Экзамен</a>
+//                            <a href="#">Зачет</a>
+//                            <a href="#">Студенты</a>
+//                            <a href="#">Предметы</a>
+//                        </div>
+//                    </div>
+//                ))
+//            )
