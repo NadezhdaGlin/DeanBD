@@ -1,14 +1,23 @@
-import { useRoutes } from "./routes";
-import { BrowserRouter } from 'react-router-dom';
+import React from "react";
+import AuthorizationForm from "./pages/AuthorizationForm"
+import { Worktable } from "./pages/Worktable";
 
 function App() {
-    const routes = useRoutes();
+    let isAuthorized = false;
 
-    return (
-        <BrowserRouter>
-            {routes}
-        </BrowserRouter>
-    );
+    if (isAuthorized) {
+        return (
+            <Worktable />
+        )
+    }
+
+    else {
+        return (
+            <div className="auth">
+                <AuthorizationForm />
+            </div>
+        )
+    }
 }
 
 export default App;

@@ -23,7 +23,7 @@ body {
 
 /* Страница */
 
-#container {
+#root {
     background-color: rgb(0, 255, 255);
     width: 100%;
     height: 100%;
@@ -104,11 +104,20 @@ body {
     /*text-align: left;*/
     transition: 0.4s;
 }
+
 .auth {
     display: flex;
-    flex-direction: row;
+    flex-direction: center;
+    align-items: center;
+    justify-content: center;
 
+    background-color: #778899;
+    vertical-align: middle;
+
+    height: 35%;
+    width: 35%;
 }
+
 .row {
     width: 300px;
     height: 200px;

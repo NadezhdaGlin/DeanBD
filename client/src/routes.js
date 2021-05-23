@@ -25,7 +25,7 @@ export const useRoutes = () => {
                 </div>
             </Route>
 
-            <Redirect to = "/authorization" />
+            <Redirect to = "/notfound" />
         </Switch>
     )
 }
