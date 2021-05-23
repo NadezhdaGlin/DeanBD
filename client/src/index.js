@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {LeftBar} from './pages/LeftBar'
+import {LeftBar} from './pages/LeftBar';
+import {Authorization} from './pages/Authorization'
 
 ReactDOM.render(
   <React.StrictMode>

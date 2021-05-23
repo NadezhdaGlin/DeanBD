@@ -104,3 +104,23 @@ body {
     /*text-align: left;*/
     transition: 0.4s;
 }
+.auth {
+    display: flex;
+    flex-direction: row;
+
+}
+.row {
+    width: 300px;
+    height: 200px;
+    background: darkslategray;
+    margin-right: 10px;
+
+}
+.btn {
+    width: 100px;
+    height: 50px;
+    background: pink;
+    margin: 2px;
+    /*flex: 1 0 auto;*/
+    /*display: flex;*/
+}

@@ -32,6 +32,20 @@ router.get('/groups', (req, res) => //req - запрос, res - ответ
     });
 });
 
+router.get('/authorization', (req, res) => //req - запрос, res - ответ
+{
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
+    connection.query("INSERT INTO registration(login, password) VALUES(?, ?)", (err, results, fields) => {
+        if (err) {
+            console.log(err);
+            res.status(503).send("Error");
+        }
+        else {
+            res.send(results)
+        }
+    });
+});
 
 
 module.exports = router;

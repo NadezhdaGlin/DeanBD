@@ -1,5 +1,6 @@
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { StudentsTable } from "./pages/StudentsTable";
+import {Authorization} from "./pages/Authorization";
 
 export const useRoutes = () => {
     return (
@@ -8,10 +9,8 @@ export const useRoutes = () => {
                 <StudentsTable />
             </Route>
 
-            <Route path = "/a">
-                <div>
-                    Страница А
-                </div>
+            <Route path = "/authorization">
+                <Authorization />
             </Route>
 
             <Route path = "/b">
@@ -26,7 +25,7 @@ export const useRoutes = () => {
                 </div>
             </Route>
 
-            <Redirect to = "/notFound" />
+            <Redirect to = "/authorization" />
         </Switch>
     )
 }
