@@ -3,7 +3,7 @@ import AuthorizationForm from "./pages/AuthorizationForm"
 import { Worktable } from "./pages/Worktable";
 
 function App() {
-    let isAuthorized = false;
+    let isAuthorized = true;
 
     if (isAuthorized) {
         return (

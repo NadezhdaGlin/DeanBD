@@ -33,9 +33,9 @@ export class StudentsTable extends React.Component {
         const columns = [
             { key: 'surname', name: 'Фамилия' },
             { key: 'name', name: 'Имя' },
-            { key: 'patronymic', name: 'Владимирович' },
+            { key: 'patronymic', name: 'Отчество' },
             { key: 'stud_recbook', name: 'Номер зачетки' },
-            { key: 'number', name: 'Ну типа номер группы' },
+            { key: 'number', name: 'Номер группы' },
         ];
 
         if (isFetching) {

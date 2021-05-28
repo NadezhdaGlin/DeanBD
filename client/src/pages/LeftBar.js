@@ -51,7 +51,7 @@ export class LeftBar extends React.Component {
             return (
                 data.map(group => (
                     <div>
-                        <button className="accordion" onClick={baton}> {group.id} </button>
+                        <button className="accordion" onClick={baton}> {group.number} </button>
                         <div className="panel">
                             <button className="accordion2">
                                 Экзамен
