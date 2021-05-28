@@ -1,23 +1,14 @@
 import React from "react";
-import AuthorizationForm from "./pages/AuthorizationForm"
-import { Worktable } from "./pages/Worktable";
+import { useRoutes } from "./routes";
 
 function App() {
-    let isAuthorized = true;
+    let routes = useRoutes(true);
 
-    if (isAuthorized) {
-        return (
-            <Worktable />
-        )
-    }
-
-    else {
-        return (
-            <div className="auth">
-                <AuthorizationForm />
-            </div>
-        )
-    }
+    return (
+        <React.Fragment>
+            {routes}
+        </React.Fragment>
+    )
 }
 
 export default App;

@@ -26,6 +26,11 @@ export class LeftBar extends React.Component {
             });    
         })
     }
+
+    disciplines(group) {
+        window.location.assign('/jghasf');
+    }
+
     render() {
         function baton (e) { console.log(e)
             e.target.classList.toggle("active");
@@ -62,29 +67,14 @@ export class LeftBar extends React.Component {
                             <button className="accordion2">
                                 Студенты
                             </button>
-                            <button className="accordion2">
+                            <button className="accordion2" onClick={() => { this.disciplines(group.number) }}>
                                 Предметы
                             </button>
                         </div>
                     </div>
-
                 ))
             )
         } 
     }
     
 }
-
-//return (
-//                data.map(group => (
-//                    <div class="dropdown">
-//                        <button class="dropbtn">{group}</button>
-//                        <div class="dropdown-content">
-//                            <a href="#">Экзамен</a>
-//                            <a href="#">Зачет</a>
-//                            <a href="#">Студенты</a>
-//                            <a href="#">Предметы</a>
-//                        </div>
-//                    </div>
-//                ))
-//            )

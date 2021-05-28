@@ -5,6 +5,8 @@ export class StudentsTable extends React.Component {
     constructor(props) {
         super(props);
 
+        console.log(this.props.match.params.groupNumber);
+
         this.state = {
             error: null,
             isFetching: true,
@@ -13,9 +15,9 @@ export class StudentsTable extends React.Component {
     }
 
     componentDidMount() {
-        fetch("http://127.0.0.1:3012/students", {
+        fetch("http://127.0.0.1:3012/students/" + this.props.match.params.groupNumber, {
             method: "GET",
-            origin: "http://127.0.0.1:3012/students"
+            origin: "http://127.0.0.1:3012/students/" + this.props.match.params.groupNumber
         })
         .then(res => res.json())
         .then(res => {
