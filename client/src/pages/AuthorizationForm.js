@@ -33,21 +33,26 @@ export class AuthorizationForm extends React.Component {
                 body: JSON.stringify({login: login, password: password}),
                 headers: {
                     'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                  },
+                    'Content-Type': 'application/json',
+                  }
             })
         }
 
         else {
-            fetch("http://127.0.0.1:3012/registration", {
+            fetch("http://127.0.0.1:3012/authorization/", {
                 method: "POST",
-                origin: "http://127.0.0.1:3012/registration",
+                origin: "http://127.0.0.1:3012/authorization/",
                 body: JSON.stringify({login: login, password: password}),
                 headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                  },
-            })
+                    'Accept': 'text/plain',
+                    'Content-Type': 'text/plain',
+                  }
+            }).then(res => res.text())
+            .then(res => {
+                console.log(res);
+                document.cookie = res;
+                document.location.href = "/";
+            });
         }
     
         event.preventDefault();
@@ -55,7 +60,7 @@ export class AuthorizationForm extends React.Component {
     
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} className="registrationForm">
                 <label>Логин: </label>
                 <input type="text" name="login" value={this.state.value} onChange={this.handleChange} />
                 <br />

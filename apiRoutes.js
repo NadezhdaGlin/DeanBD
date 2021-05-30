@@ -11,8 +11,7 @@ router.get('/students/:num', (req, res) => //req - запрос, res - отве�
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
 
-    connection.query("SELECT students.name, students.surname, students.patronymic,students.stud_recbook, groups.number FROM students JOIN groups ON groups.id = students.ID_groups WHERE groups.number = " + req.params.num, (err, results, fields) => {
-        if (err) {
+    connection.query("SELECT students.name, students.surname, students.patronymic,students.stud_recbook, groups.number FROM students JOIN groups ON groups.id = students.ID_groups WHERE groups.number = " + req.params.num, (err, results, fields) => {    if (err) {
             console.log(err);
             res.status(503).send("Error");
         }
@@ -41,18 +40,20 @@ router.post('/authorization', (req, res) => //req - запрос, res - отве
 {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
-    connection.query("SELECT EXISTS(SELECT id FROM table WHERE login=?, password=?)", [req.body.login, req.body.password], (err, results, fields) => {
-        if (err) {
-            console.log(err);
-            res.status(503).send("Error");
-        }
-        else {
-            let token = crypto.randomBytes(64).toString('hex');
-            res.cookie("token", token, {maxAge: new Date().getTime() + 1000*36000});
-            users[token] = req.body.login;
-            res.send(results);
-        }
-    });
+    res.cookie("token", crypto.randomBytes(64).toString('hex'), {maxAge: new Date().getTime() + 1000*36000});
+    res.send("token=" + crypto.randomBytes(64).toString('hex'));
+    // connection.query("SELECT EXISTS(SELECT id FROM table WHERE login=?, password=?)", [req.body.login, req.body.password], (err, results, fields) => {
+    //     if (err) {
+    //         console.log(err);
+    //         res.status(503).send("Error");
+    //     }
+    //     else {
+    //         let token = crypto.randomBytes(64).toString('hex');
+    //         res.cookie("token", token, {maxAge: new Date().getTime() + 1000*36000});
+    //         users[token] = req.body.login;
+    //         res.send(results);
+    //     }
+    // });
 });
 
 router.post('/registration', (req, res) => {
