@@ -70,4 +70,22 @@ router.post('/registration', (req, res) => {
     });
 });
 
+router.get('/disciplines', (req, res) => //req - запрос, res - ответ
+{
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
+
+    connection.query("SELECT id, name FROM disciplines", (err, results, fields) => {
+        if (err) {
+            console.log(err);
+            res.status(503).send("Error");
+        }
+        else {
+            res.send(results)
+        }
+    });
+});
+
+
 module.exports = router;
+

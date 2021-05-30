@@ -32,6 +32,12 @@ body {
     display: flex;
 }
 
+#inside {
+    background-color: brown;
+    width: 100px;
+    height: 100px;
+}
+
 #leftbar {
     background-color: #778899;
     flex: 1 0 auto;
@@ -43,12 +49,12 @@ body {
 }
 
 #emptyTopLeftCorner {
-    background-color: greenyellow;
+    background-color: #1E90FF;
     height: var(--header-size);
 }
 
 #groupsBar {
-    background-color: rgb(255, 0, 212);
+    background-color: #4169E1;
     height: calc(100% - var(--header-size));
     overflow-y: scroll;
     
@@ -63,21 +69,21 @@ body {
 }
 
 #navigation {
-    background-color: orange;
+    background-color: #4682B4;
     flex: 1 0 auto;
     display: flex;
     height: var(--header-size);
 }
 
 #table {
-    background-color: red;
+    background-color: ghostwhite;
     flex: 1 0 auto;
     /* display: flex; */
     height: calc(100% - var(--header-size));
 }
 
 .accordion {
-    background-color: palevioletred;
+    background-color: #E0FFFF;
     color: #444;
     cursor: pointer;
     padding: 18px;
@@ -87,7 +93,7 @@ body {
 }
 
 .active, .accordion:hover {
-    background-color: pink;
+    background-color: #87CEFA;
 }
 
 .panel {
@@ -96,7 +102,7 @@ body {
     overflow: hidden;
 }
 .accordion2 {
-    background-color: #B0E0E6;
+    background-color: #FFF0F5;
     color: #444;
     cursor: pointer;
     padding: 18px;

@@ -7,7 +7,7 @@ export class AuthorizationForm extends React.Component {
         document.getElementById("root").style.justifyContent = "center";
         document.getElementById("root").style.alignItems = "center";
         document.getElementById("root").style.display = "flex";
-    
+        // document.getElementById("inside").style.alignItems = "center";
         this.state = {login: '', password: ''};
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);

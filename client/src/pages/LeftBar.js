@@ -28,8 +28,9 @@ export class LeftBar extends React.Component {
     }
 
     disciplines(group) {
-        window.location.assign('/jghasf');
+        window.location.assign('/disciplines');
     }
+
 
     render() {
         function baton (e) { console.log(e)
