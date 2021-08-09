@@ -33,7 +33,7 @@ export class DisciplinesTable extends React.Component {
         const { error, isFetching, data } = this.state;
 
         const columns = [
-            {key: 'id', name: '-' },
+            {key: 'id', name: '-', width: 20},
             {key: 'name', name: 'наименование' },
         ];
 
@@ -43,9 +43,13 @@ export class DisciplinesTable extends React.Component {
 
         else {
             return (
-                <ReactDataGrid
-                    columns={columns}
-                    rows={data}/>
+                <div>
+                    <ReactDataGrid
+                        columns={columns}
+                        rows={data}
+                        minHeight={679}/>
+                </div>
+
             );
         }
     }

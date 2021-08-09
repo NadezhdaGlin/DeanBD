@@ -32,10 +32,11 @@ body {
     display: flex;
 }
 
-#inside {
-    background-color: brown;
-    width: 100px;
+.registrationForm {
+    background-color: #B0C4DE;
+    width: 300px;
     height: 100px;
+    padding: 18px;
 }
 
 #leftbar {
@@ -124,6 +125,4 @@ body {
     width: 35%;
 }
 
-.registrationForm {
-    background-color: white;
-}
+
